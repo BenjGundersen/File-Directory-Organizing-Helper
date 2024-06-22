@@ -7,10 +7,18 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Button x:Name="start" Content="START" HorizontalAlignment="Left" Margin="588,356,0,0" VerticalAlignment="Top" Click="START_Click" Height="47" Width="111"/>
         <Frame Content="Frame" Navigated="Frame_Navigated_1"/>
-        <TextBox x:Name="directorySelected" HorizontalAlignment="Left" Margin="43,45,0,0" TextWrapping="Wrap" Text="Folder Selected:" VerticalAlignment="Top" Width="120" AllowDrop="True" Cursor="None"/>
-        <Button x:Name="selectFolder" Content="Button" HorizontalAlignment="Left" Margin="115,86,0,0" VerticalAlignment="Top" Click="Button_Click"/>
+        <TextBox x:Name="directorySelected" HorizontalAlignment="Left" Margin="72,68,0,0" TextWrapping="Wrap" Text="Folder Selected:" VerticalAlignment="Top" Width="98" AllowDrop="True" Cursor="None" IsReadOnly="True" Height="30" BorderThickness="0,0,0,0"/>
+        <Button x:Name="selectFolder" Content="Select Folder" HorizontalAlignment="Left" Margin="619,63,0,0" VerticalAlignment="Top" Click="Button_Click" Height="29" Width="91"/>
+        <TextBox x:Name="directory" HorizontalAlignment="Left" Margin="160,63,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="459" Height="29"/>
+        <Button x:Name="startButton" Content="START" HorizontalAlignment="Left" Margin="619,341,0,0" VerticalAlignment="Top" Click="startButton_Click" Height="51" Width="91"/>
+        <CheckBox x:Name="documents" Content="Documents" HorizontalAlignment="Left" Margin="121,217,0,0" VerticalAlignment="Top" IsChecked="True"/>
+        <CheckBox x:Name="videos" Content="Videos" HorizontalAlignment="Left" Margin="121,255,0,0" VerticalAlignment="Top" IsChecked="True"/>
+        <CheckBox x:Name="imagesCheckbox" Content="Images" HorizontalAlignment="Left" Margin="121,293,0,0" VerticalAlignment="Top" IsChecked="True" Checked="imagesCheckbox_Checked"/>
+        <CheckBox x:Name="archives" Content="Archives" HorizontalAlignment="Left" Margin="121,329,0,0" VerticalAlignment="Top" IsChecked="True"/>
+        <CheckBox x:Name="executables" Content="Executables" HorizontalAlignment="Left" Margin="273,217,0,0" VerticalAlignment="Top" IsChecked="True"/>
+        <ProgressBar x:Name="progressBar" HorizontalAlignment="Left" Height="10" Margin="329,382,0,0" VerticalAlignment="Top" Width="100"/>
+
 
     </Grid>
 </Window>
