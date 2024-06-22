@@ -41,32 +41,59 @@ namespace File_Directory_Organizing_Helper
 
         }
 
-
-        private void startButton_Click(object sender, RoutedEventArgs e)
+        private void imageCheckBox_Checked()
         {
-            //imagesCheckbox_Checked();
             string sourceDirectory = directory.Text;
             DirectoryInfo di = Directory.CreateDirectory(directory.Text + "\\Images\\");
             string newDirectory = di.FullName;
 
-                var gifs = Directory.EnumerateFiles(sourceDirectory, "*.gif", SearchOption.AllDirectories);
+            var gifs = Directory.EnumerateFiles(sourceDirectory, "*.gif", SearchOption.TopDirectoryOnly);
+
+            if (gifs is not null)
+            {
                 foreach (var gif in gifs)
                 {
                     string fileName = gif.Substring(sourceDirectory.Length + 1);
                     Directory.Move(gif, System.IO.Path.Combine(newDirectory, fileName));
                 }
-        }
-
-        private void imagesCheckbox_Checked()
-        {
-
-            var jpgs = Directory.EnumerateFiles(sourceDirectory, "*.*", SearchOption.AllDirectories).Where(s => s.EndsWith(".jpg") || s.EndsWith(".jpeg"));
-            foreach (var jpg in jpgs)
-            {
-                string fileName = jpg.Substring(sourceDirectory.Length + 1);
-                Directory.Move(jpg, System.IO.Path.Combine(newDirectory, fileName));
             }
-            
+
+            var pngs = Directory.EnumerateFiles(sourceDirectory, "*.png", SearchOption.TopDirectoryOnly);
+
+            if (pngs is not null)
+            {
+                foreach (var png in pngs)
+                {
+                    string fileName = png.Substring(sourceDirectory.Length + 1);
+                    Directory.Move(png, System.IO.Path.Combine(newDirectory, fileName));
+                }
+            }
+                
+            var jpgs = Directory.EnumerateFiles(sourceDirectory, "*.*", SearchOption.TopDirectoryOnly)
+                .Where(s => s.EndsWith(".jpg") || s.EndsWith(".jpeg"));
+
+            if (jpgs.Count() is not 0)
+            {
+                foreach (var jpg in jpgs)
+                {
+                    string fileName = jpg.Substring(sourceDirectory.Length + 1);
+                    Directory.Move(jpg, System.IO.Path.Combine(newDirectory, fileName));
+                }
+            }
         }
+
+
+        private void startButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (imagesCheckbox.IsChecked == true)
+            {
+                imageCheckBox_Checked();
+            }
+            else
+            {
+                MessageBox.Show("Box not checked");
+            }
+        }
+
     }
 }
