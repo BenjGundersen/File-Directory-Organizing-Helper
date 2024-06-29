@@ -12,11 +12,11 @@
         <Button x:Name="selectFolder" Content="Select Folder" HorizontalAlignment="Left" Margin="619,63,0,0" VerticalAlignment="Top" Click="Button_Click" Height="29" Width="91"/>
         <TextBox x:Name="directory" HorizontalAlignment="Left" Margin="160,63,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="459" Height="29"/>
         <Button x:Name="startButton" Content="START" HorizontalAlignment="Left" Margin="619,341,0,0" VerticalAlignment="Top" Click="startButton_Click" Height="51" Width="91"/>
-        <CheckBox x:Name="documents" Content="Documents" HorizontalAlignment="Left" Margin="121,217,0,0" VerticalAlignment="Top" IsChecked="True"/>
-        <CheckBox x:Name="videos" Content="Videos" HorizontalAlignment="Left" Margin="121,255,0,0" VerticalAlignment="Top" IsChecked="True"/>
+        <CheckBox x:Name="documentsCheckbox" Content="Documents" HorizontalAlignment="Left" Margin="121,217,0,0" VerticalAlignment="Top" IsChecked="True"/>
+        <CheckBox x:Name="videosCheckbox" Content="Videos" HorizontalAlignment="Left" Margin="121,255,0,0" VerticalAlignment="Top" IsChecked="True"/>
         <CheckBox x:Name="imagesCheckbox" Content="Images" HorizontalAlignment="Left" Margin="121,293,0,0" VerticalAlignment="Top" IsChecked="True"/>
-        <CheckBox x:Name="archives" Content="Archives" HorizontalAlignment="Left" Margin="121,329,0,0" VerticalAlignment="Top" IsChecked="True"/>
-        <CheckBox x:Name="executables" Content="Executables" HorizontalAlignment="Left" Margin="273,217,0,0" VerticalAlignment="Top" IsChecked="True"/>
+        <CheckBox x:Name="archivesCheckbox" Content="Archives" HorizontalAlignment="Left" Margin="121,329,0,0" VerticalAlignment="Top" IsChecked="True"/>
+        <CheckBox x:Name="executablesCheckbox" Content="Executables" HorizontalAlignment="Left" Margin="273,217,0,0" VerticalAlignment="Top" IsChecked="True"/>
         <ProgressBar x:Name="progressBar" HorizontalAlignment="Left" Height="10" Margin="329,382,0,0" VerticalAlignment="Top" Width="100"/>
 
 

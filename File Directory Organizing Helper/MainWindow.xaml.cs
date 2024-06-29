@@ -25,7 +25,6 @@ namespace File_Directory_Organizing_Helper
         {
         }
 
-        //String directory = "";
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -41,43 +40,92 @@ namespace File_Directory_Organizing_Helper
 
         }
 
+        private void documentsCheckBox_Checked()
+        {
+            string sourceDirectory = directory.Text;
+            var docs = Directory.EnumerateFiles(sourceDirectory, "*.*", SearchOption.TopDirectoryOnly)
+                .Where(s => s.EndsWith(".docx") || s.EndsWith(".pdf") || s.EndsWith(".xlsx"));
+
+            if (docs is not null)
+            {
+                DirectoryInfo di = Directory.CreateDirectory(directory.Text + "\\Documents\\");
+                string newDirectory = di.FullName;
+                foreach (var document in docs)
+                {
+                    string filename = document.Substring(sourceDirectory.Length + 1);
+                    Directory.Move(document, System.IO.Path.Combine(newDirectory, filename));
+                }
+            }
+        }
+
+        private void videosCheckBox_Checked()
+        {
+            string sourceDirectory = directory.Text;
+            var videos = Directory.EnumerateFiles(sourceDirectory, "*.*", SearchOption.TopDirectoryOnly)
+                .Where(s => s.EndsWith(".mp4") || s.EndsWith(".mkv") || s.EndsWith(".webm"));
+
+            if (videos is not null)
+            {
+                DirectoryInfo di = Directory.CreateDirectory(directory.Text + "\\Videos\\");
+                string newDirectory = di.FullName;
+                foreach (var video in videos)
+                {
+                    string filename = video.Substring(sourceDirectory.Length + 1);
+                    Directory.Move(video, System.IO.Path.Combine(newDirectory, filename));
+                }
+            }
+        }
+
         private void imageCheckBox_Checked()
         {
             string sourceDirectory = directory.Text;
-            DirectoryInfo di = Directory.CreateDirectory(directory.Text + "\\Images\\");
-            string newDirectory = di.FullName;
+            var images = Directory.EnumerateFiles(sourceDirectory, "*.*", SearchOption.TopDirectoryOnly)
+                .Where(s => s.EndsWith(".png") || s.EndsWith(".jpg") || s.EndsWith(".jpeg") || s.EndsWith(".webp") || s.EndsWith(".gif"));
 
-            var gifs = Directory.EnumerateFiles(sourceDirectory, "*.gif", SearchOption.TopDirectoryOnly);
-
-            if (gifs is not null)
+            if (images is not null)
             {
-                foreach (var gif in gifs)
+                DirectoryInfo di = Directory.CreateDirectory(directory.Text + "\\Videos\\");
+                string newDirectory = di.FullName;
+                foreach (var image in images)
                 {
-                    string fileName = gif.Substring(sourceDirectory.Length + 1);
-                    Directory.Move(gif, System.IO.Path.Combine(newDirectory, fileName));
+                    string filename = image.Substring(sourceDirectory.Length + 1);
+                    Directory.Move(image, System.IO.Path.Combine(newDirectory, filename));
                 }
             }
+        }
 
-            var pngs = Directory.EnumerateFiles(sourceDirectory, "*.png", SearchOption.TopDirectoryOnly);
+        private void archivesCheckbox_Checked()
+        {
+            string sourceDirectory = directory.Text;
+            var archives = Directory.EnumerateFiles(sourceDirectory, "*.*", SearchOption.TopDirectoryOnly)
+                .Where(s => s.EndsWith(".rar") || s.EndsWith(".zip") || s.EndsWith(".7z"));
 
-            if (pngs is not null)
+            if (archives is not null)
             {
-                foreach (var png in pngs)
+                DirectoryInfo di = Directory.CreateDirectory(directory.Text + "\\Archives\\");
+                string newDirectory = di.FullName;
+                foreach (var archive in archives) 
                 {
-                    string fileName = png.Substring(sourceDirectory.Length + 1);
-                    Directory.Move(png, System.IO.Path.Combine(newDirectory, fileName));
+                    string filename = archive.Substring(sourceDirectory.Length + 1);
+                    Directory.Move(archive, System.IO.Path.Combine(newDirectory, filename));
                 }
             }
-                
-            var jpgs = Directory.EnumerateFiles(sourceDirectory, "*.*", SearchOption.TopDirectoryOnly)
-                .Where(s => s.EndsWith(".jpg") || s.EndsWith(".jpeg"));
+        }
 
-            if (jpgs.Count() is not 0)
+        private void executablesCheckbox_Checked()
+        {
+            string sourceDirectory = directory.Text;
+            var exes = Directory.EnumerateFiles(sourceDirectory, "*.*", SearchOption.TopDirectoryOnly)
+                .Where(s => s.EndsWith(".exe") || s.EndsWith(".msi"));
+
+            if (exes is not null)
             {
-                foreach (var jpg in jpgs)
+                DirectoryInfo di = Directory.CreateDirectory(directory.Text + "\\Executables\\");
+                string newDirectory = di.FullName;
+                foreach (var executable in exes)
                 {
-                    string fileName = jpg.Substring(sourceDirectory.Length + 1);
-                    Directory.Move(jpg, System.IO.Path.Combine(newDirectory, fileName));
+                    string filename = executable.Substring(sourceDirectory.Length + 1);
+                    Directory.Move(executable, System.IO.Path.Combine(newDirectory, filename));
                 }
             }
         }
@@ -85,15 +133,37 @@ namespace File_Directory_Organizing_Helper
 
         private void startButton_Click(object sender, RoutedEventArgs e)
         {
+            if (documentsCheckbox.IsChecked == false && videosCheckbox.IsChecked == false && imagesCheckbox.IsChecked == false && archivesCheckbox.IsChecked == false && executablesCheckbox.IsChecked == false) 
+            {
+                MessageBox.Show("There are no check boxes selected! No files have been moved");
+            }
+
+            if (documentsCheckbox.IsChecked == true)
+            {
+                documentsCheckBox_Checked();
+            }
+
+            if (videosCheckbox.IsChecked == true)
+            {
+                videosCheckBox_Checked();
+            }
+
             if (imagesCheckbox.IsChecked == true)
             {
                 imageCheckBox_Checked();
             }
-            else
+
+            if (archivesCheckbox.IsChecked == true)
             {
-                MessageBox.Show("Box not checked");
+                archivesCheckbox_Checked();
+            }
+
+            if (executablesCheckbox.IsChecked == true)
+            {
+                executablesCheckbox_Checked();
             }
         }
+
 
     }
 }
