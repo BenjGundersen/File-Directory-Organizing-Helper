@@ -13,6 +13,7 @@ using Microsoft.Win32;
 using System.IO;
 using System;
 using System.Reflection.Metadata;
+using System.Windows.Media.Animation;
 
 namespace File_Directory_Organizing_Helper
 {
@@ -26,7 +27,7 @@ namespace File_Directory_Organizing_Helper
         }
 
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Button_Click()
         {
             OpenFolderDialog openFolderDialog1 = new OpenFolderDialog();
             openFolderDialog1.Title = "Select Folder";
@@ -100,7 +101,7 @@ namespace File_Directory_Organizing_Helper
 
             if (images is not null)
             {
-                DirectoryInfo di = Directory.CreateDirectory(directory.Text + "\\Videos\\");
+                DirectoryInfo di = Directory.CreateDirectory(directory.Text + "\\Images\\");
                 string newDirectory = di.FullName;
                 foreach (var image in images)
                 {
@@ -149,40 +150,52 @@ namespace File_Directory_Organizing_Helper
 
         private void startButton_Click(object sender, RoutedEventArgs e)
         {
+            if (directory.Text == "")
+            {
+                MessageBox.Show("There is not a file directory chosen! Opening the directory chooser.");
+                Button_Click();
+            }
+
             if (folderCheckbox.IsChecked == false && documentsCheckbox.IsChecked == false && videosCheckbox.IsChecked == false && imagesCheckbox.IsChecked == false && archivesCheckbox.IsChecked == false && executablesCheckbox.IsChecked == false) 
             {
                 MessageBox.Show("There are no check boxes selected! No files have been moved");
             }
-
-            if (folderCheckbox.IsChecked == true)
+            else
             {
-                folderCheckbox_Checked();
-            }
+                Duration duration = new Duration(TimeSpan.FromSeconds(.5));
+                DoubleAnimation doubleanimation = new DoubleAnimation(200.0, duration);
+                progressBar.BeginAnimation(ProgressBar.ValueProperty, doubleanimation);
 
-            if (documentsCheckbox.IsChecked == true)
-            {
-                documentsCheckBox_Checked();
-            }
+                if (folderCheckbox.IsChecked == true)
+                {
+                    folderCheckbox_Checked();
+                }
 
-            if (videosCheckbox.IsChecked == true)
-            {
-                videosCheckBox_Checked();
-            }
+                if (documentsCheckbox.IsChecked == true)
+                {
+                    documentsCheckBox_Checked();
+                }
 
-            if (imagesCheckbox.IsChecked == true)
-            {
-                imageCheckBox_Checked();
-            }
+                if (videosCheckbox.IsChecked == true)
+                {
+                    videosCheckBox_Checked();
+                }
 
-            if (archivesCheckbox.IsChecked == true)
-            {
-                archivesCheckbox_Checked();
-            }
+                if (imagesCheckbox.IsChecked == true)
+                {
+                    imageCheckBox_Checked();
+                }
 
-            if (executablesCheckbox.IsChecked == true)
-            {
-                executablesCheckbox_Checked();
-            }
+                if (archivesCheckbox.IsChecked == true)
+                {
+                    archivesCheckbox_Checked();
+                }
+
+                if (executablesCheckbox.IsChecked == true)
+                {
+                    executablesCheckbox_Checked();
+                }
+            }                  
         }
     }
 }

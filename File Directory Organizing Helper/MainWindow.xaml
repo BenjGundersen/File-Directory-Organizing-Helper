@@ -17,7 +17,7 @@
         <CheckBox x:Name="imagesCheckbox" Content="Images" HorizontalAlignment="Left" Margin="121,293,0,0" VerticalAlignment="Top" IsChecked="True"/>
         <CheckBox x:Name="archivesCheckbox" Content="Archives" HorizontalAlignment="Left" Margin="121,329,0,0" VerticalAlignment="Top" IsChecked="True"/>
         <CheckBox x:Name="executablesCheckbox" Content="Executables" HorizontalAlignment="Left" Margin="273,217,0,0" VerticalAlignment="Top" IsChecked="True"/>
-        <ProgressBar x:Name="progressBar" HorizontalAlignment="Left" Height="10" Margin="329,382,0,0" VerticalAlignment="Top" Width="100"/>
+        <ProgressBar x:Name="progressBar" HorizontalAlignment="Left" Height="26" Margin="273,375,0,0" VerticalAlignment="Top" Width="266"/>
         <CheckBox x:Name="folderCheckbox" Content="Folders" HorizontalAlignment="Left" Margin="273,255,0,0" VerticalAlignment="Top" IsChecked="True"/>
 
 
