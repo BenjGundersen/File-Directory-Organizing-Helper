@@ -27,7 +27,7 @@ namespace File_Directory_Organizing_Helper
         }
 
 
-        private void Button_Click()
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
             OpenFolderDialog openFolderDialog1 = new OpenFolderDialog();
             openFolderDialog1.Title = "Select Folder";
@@ -47,7 +47,7 @@ namespace File_Directory_Organizing_Helper
             var directories = Directory.GetDirectories(sourceDirectory);
             if (directories is not null)
             {
-                DirectoryInfo di = Directory.CreateDirectory(directory.Text + "\\Folders\\");
+                DirectoryInfo di = Directory.CreateDirectory(directory.Text + "\\Old Folders\\");
                 string newDirectory = di.FullName;
                 foreach (var directory in directories )
                 {
@@ -152,8 +152,7 @@ namespace File_Directory_Organizing_Helper
         {
             if (directory.Text == "")
             {
-                MessageBox.Show("There is not a file directory chosen! Opening the directory chooser.");
-                Button_Click();
+                MessageBox.Show("There is not a file directory chosen! Program will now close.");
             }
 
             if (folderCheckbox.IsChecked == false && documentsCheckbox.IsChecked == false && videosCheckbox.IsChecked == false && imagesCheckbox.IsChecked == false && archivesCheckbox.IsChecked == false && executablesCheckbox.IsChecked == false) 
