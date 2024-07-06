@@ -40,6 +40,22 @@ namespace File_Directory_Organizing_Helper
 
         }
 
+        private void folderCheckbox_Checked()
+        {
+            string sourceDirectory = directory.Text;
+            var directories = Directory.GetDirectories(sourceDirectory);
+            if (directories is not null)
+            {
+                DirectoryInfo di = Directory.CreateDirectory(directory.Text + "\\Folders\\");
+                string newDirectory = di.FullName;
+                foreach (var directory in directories )
+                {
+                    string filename = directory.Substring(sourceDirectory.Length + 1);
+                    Directory.Move(directory, System.IO.Path.Combine(newDirectory, filename));
+                }
+            }
+        }
+
         private void documentsCheckBox_Checked()
         {
             string sourceDirectory = directory.Text;
@@ -133,9 +149,14 @@ namespace File_Directory_Organizing_Helper
 
         private void startButton_Click(object sender, RoutedEventArgs e)
         {
-            if (documentsCheckbox.IsChecked == false && videosCheckbox.IsChecked == false && imagesCheckbox.IsChecked == false && archivesCheckbox.IsChecked == false && executablesCheckbox.IsChecked == false) 
+            if (folderCheckbox.IsChecked == false && documentsCheckbox.IsChecked == false && videosCheckbox.IsChecked == false && imagesCheckbox.IsChecked == false && archivesCheckbox.IsChecked == false && executablesCheckbox.IsChecked == false) 
             {
                 MessageBox.Show("There are no check boxes selected! No files have been moved");
+            }
+
+            if (folderCheckbox.IsChecked == true)
+            {
+                folderCheckbox_Checked();
             }
 
             if (documentsCheckbox.IsChecked == true)
@@ -163,7 +184,5 @@ namespace File_Directory_Organizing_Helper
                 executablesCheckbox_Checked();
             }
         }
-
-
     }
 }
