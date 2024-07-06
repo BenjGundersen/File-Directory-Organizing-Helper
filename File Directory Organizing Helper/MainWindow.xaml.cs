@@ -196,5 +196,12 @@ namespace File_Directory_Organizing_Helper
                 }
             }                  
         }
+
+        private void infoButton_Click(object sender, RoutedEventArgs e)
+        {
+            InfoWindow infoWindow = new InfoWindow();
+
+            infoWindow.Show();
+        }
     }
 }

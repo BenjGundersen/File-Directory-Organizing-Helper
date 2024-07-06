@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Frame Content="Frame" Navigated="Frame_Navigated_1"/>
+
         <TextBox x:Name="directorySelected" HorizontalAlignment="Left" Margin="72,68,0,0" TextWrapping="Wrap" Text="Folder Selected:" VerticalAlignment="Top" Width="98" AllowDrop="True" Cursor="None" IsReadOnly="True" Height="30" BorderThickness="0,0,0,0"/>
         <Button x:Name="selectFolder" Content="Select Folder" HorizontalAlignment="Left" Margin="619,63,0,0" VerticalAlignment="Top" Click="Button_Click" Height="29" Width="91"/>
         <TextBox x:Name="directory" HorizontalAlignment="Left" Margin="160,63,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="459" Height="29"/>
@@ -19,6 +19,10 @@
         <CheckBox x:Name="executablesCheckbox" Content="Executables" HorizontalAlignment="Left" Margin="273,217,0,0" VerticalAlignment="Top" IsChecked="True"/>
         <ProgressBar x:Name="progressBar" HorizontalAlignment="Left" Height="26" Margin="273,375,0,0" VerticalAlignment="Top" Width="266"/>
         <CheckBox x:Name="folderCheckbox" Content="Folders" HorizontalAlignment="Left" Margin="273,255,0,0" VerticalAlignment="Top" IsChecked="True"/>
+        <Button x:Name="infoButton" Content="Info" HorizontalAlignment="Left" VerticalAlignment="Top" Height="20" Width="50" Click="infoButton_Click"/>
+        <Button x:Name="optionsButton" Content="Options" HorizontalAlignment="Left" Margin="50,0,0,0" VerticalAlignment="Top" Height="20" Width="50"/>
+
+
 
 
     </Grid>
