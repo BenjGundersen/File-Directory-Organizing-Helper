@@ -23,5 +23,12 @@ namespace File_Directory_Organizing_Helper
         {
             InitializeComponent();
         }
+
+        string input;
+
+        private void addExtensionToListButton_Click(object sender, RoutedEventArgs e)
+        {
+            string content = inputFileExtension.Text;
+        }
     }
 }

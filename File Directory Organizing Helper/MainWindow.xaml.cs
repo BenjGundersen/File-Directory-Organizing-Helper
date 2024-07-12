@@ -24,6 +24,7 @@ namespace File_Directory_Organizing_Helper
     {
         public MainWindow()
         {
+            
         }
 
 
@@ -202,6 +203,13 @@ namespace File_Directory_Organizing_Helper
             InfoWindow infoWindow = new InfoWindow();
 
             infoWindow.Show();
+        }
+
+        private void optionsButton_Click(object sender, RoutedEventArgs e)
+        {
+            OptionsWindow optionsWindow = new OptionsWindow();
+
+            optionsWindow.Show();
         }
     }
 }

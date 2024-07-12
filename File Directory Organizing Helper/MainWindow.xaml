@@ -20,7 +20,7 @@
         <ProgressBar x:Name="progressBar" HorizontalAlignment="Left" Height="26" Margin="273,375,0,0" VerticalAlignment="Top" Width="266"/>
         <CheckBox x:Name="folderCheckbox" Content="Folders" HorizontalAlignment="Left" Margin="273,255,0,0" VerticalAlignment="Top" IsChecked="True"/>
         <Button x:Name="infoButton" Content="Info" HorizontalAlignment="Left" VerticalAlignment="Top" Height="20" Width="50" Click="infoButton_Click"/>
-        <Button x:Name="optionsButton" Content="Options" HorizontalAlignment="Left" Margin="50,0,0,0" VerticalAlignment="Top" Height="20" Width="50"/>
+        <Button x:Name="optionsButton" Content="Options" HorizontalAlignment="Left" Margin="50,0,0,0" VerticalAlignment="Top" Height="20" Width="50" Click="optionsButton_Click"/>
 
 
 
