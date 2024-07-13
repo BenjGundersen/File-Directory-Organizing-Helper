@@ -27,6 +27,8 @@ namespace File_Directory_Organizing_Helper
             
         }
 
+        List<string> fileTypesList = new List<string>();
+
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -148,6 +150,27 @@ namespace File_Directory_Organizing_Helper
             }
         }
 
+        public void processCustomList(List<string> list)
+        {
+            string sourceDirectory = directory.Text;
+            IEnumerable<string> files = Directory.EnumerateFiles(sourceDirectory, "*.*", SearchOption.TopDirectoryOnly);
+
+            var filteredFiles = files.Where(file => list.Contains(System.IO.Path.GetExtension(file), StringComparer.OrdinalIgnoreCase));
+            DirectoryInfo di = Directory.CreateDirectory(directory.Text + "\\Custom\\");
+            string newDirectory = di.FullName;
+            foreach (var file in filteredFiles)
+            {
+                string filename = file.Substring(sourceDirectory.Length + 1);
+                Directory.Move(file, System.IO.Path.Combine(newDirectory, filename));
+            }
+        }
+
+        private void customCheckbox_Checked()
+        {
+            var list = OptionsWindow.GetFileTypesList();
+            processCustomList(list);
+        }
+
 
         private void startButton_Click(object sender, RoutedEventArgs e)
         {
@@ -156,7 +179,7 @@ namespace File_Directory_Organizing_Helper
                 MessageBox.Show("There is not a file directory chosen! Program will now close.");
             }
 
-            if (folderCheckbox.IsChecked == false && documentsCheckbox.IsChecked == false && videosCheckbox.IsChecked == false && imagesCheckbox.IsChecked == false && archivesCheckbox.IsChecked == false && executablesCheckbox.IsChecked == false) 
+            if (folderCheckbox.IsChecked == false && documentsCheckbox.IsChecked == false && videosCheckbox.IsChecked == false && imagesCheckbox.IsChecked == false && archivesCheckbox.IsChecked == false && executablesCheckbox.IsChecked == false && customCheckbox.IsChecked == false) 
             {
                 MessageBox.Show("There are no check boxes selected! No files have been moved");
             }
@@ -194,6 +217,11 @@ namespace File_Directory_Organizing_Helper
                 if (executablesCheckbox.IsChecked == true)
                 {
                     executablesCheckbox_Checked();
+                }
+
+                if (customCheckbox.IsChecked == true)
+                {
+                    customCheckbox_Checked();
                 }
             }                  
         }

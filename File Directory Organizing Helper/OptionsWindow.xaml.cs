@@ -24,7 +24,11 @@ namespace File_Directory_Organizing_Helper
             InitializeComponent();
         }
 
-        List<string> fileTypesList = new List<string>();
+        private static List<string> fileTypesList = new List<string>();
+        public static List<string> GetFileTypesList()
+        {
+            return fileTypesList;
+        }
         
 
         private void addExtensionToListButton_Click(object sender, RoutedEventArgs e)
