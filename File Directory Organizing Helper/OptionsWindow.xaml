@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:File_Directory_Organizing_Helper"
         mc:Ignorable="d"
-        Title="OptionsWindow" Height="400" Width="400">
+        Title="OptionsWindow" Height="400" Width="500">
     <Grid>
         <CheckBox Content="Enable Dark Mode?" HorizontalAlignment="Left" Margin="220,59,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="ListOfExtensions" HorizontalAlignment="Left" Margin="29,76,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Height="186" IsReadOnly="False"/>
