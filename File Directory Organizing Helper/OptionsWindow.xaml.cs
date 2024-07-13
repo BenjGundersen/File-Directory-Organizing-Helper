@@ -25,20 +25,21 @@ namespace File_Directory_Organizing_Helper
         }
 
         List<string> fileTypesList = new List<string>();
-
-        string input;
-
-        private void addExtensionToListTextBox(string fileType)
-        {
-            listOfExtensions.Text(fileType, "\n");
-        }
+        
 
         private void addExtensionToListButton_Click(object sender, RoutedEventArgs e)
         {
-            string content = inputFileExtension.Text;
+            string content = ("." + InputFileExtension.Text);
             fileTypesList.Add(content);
-            addExtensionToListTextBox(content);
-            inputFileExtension.Text.Clear();
+            string concatenatedStrings = string.Join("\n", fileTypesList);
+            ListOfExtensions.Text = concatenatedStrings;
+            InputFileExtension.Text = "";
+        }
+
+        private void ClearListButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            fileTypesList.Clear();
+            ListOfExtensions.Text = "";
         }
     }
 }
