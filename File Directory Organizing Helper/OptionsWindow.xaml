@@ -9,9 +9,9 @@
     <Grid>
         <CheckBox Content="Enable Dark Mode?" HorizontalAlignment="Left" Margin="220,59,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="listOfExtensions" HorizontalAlignment="Left" Margin="29,76,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Height="186" IsReadOnly="False"/>
-        <TextBox x:Name="inputFileExtension" HorizontalAlignment="Left" Margin="237,131,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="inputFileExtension" HorizontalAlignment="Left" Margin="241,149,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <TextBlock HorizontalAlignment="Left" Margin="238,94,0,0" TextWrapping="Wrap" Text="Enter Custom File Extension Below (Do Not Include The .):" VerticalAlignment="Top"/>
-        <Button x:Name="addExtensionToListButton" Content="Add To List" HorizontalAlignment="Left" Margin="295,154,0,0" VerticalAlignment="Top" Click="addExtensionToListButton_Click"/>
+        <Button x:Name="addExtensionToListButton" Content="Add To List" HorizontalAlignment="Left" Margin="299,172,0,0" VerticalAlignment="Top" Click="addExtensionToListButton_Click"/>
         <TextBlock HorizontalAlignment="Left" Margin="29,55,0,0" TextWrapping="Wrap" Text="List of Custom File Extensions:" VerticalAlignment="Top"/>
 
     </Grid>

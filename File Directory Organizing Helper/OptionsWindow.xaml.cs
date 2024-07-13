@@ -24,11 +24,21 @@ namespace File_Directory_Organizing_Helper
             InitializeComponent();
         }
 
+        List<string> fileTypesList = new List<string>();
+
         string input;
+
+        private void addExtensionToListTextBox(string fileType)
+        {
+            listOfExtensions.Text(fileType, "\n");
+        }
 
         private void addExtensionToListButton_Click(object sender, RoutedEventArgs e)
         {
             string content = inputFileExtension.Text;
+            fileTypesList.Add(content);
+            addExtensionToListTextBox(content);
+            inputFileExtension.Text.Clear();
         }
     }
 }
