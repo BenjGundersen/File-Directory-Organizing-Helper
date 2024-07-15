@@ -6,8 +6,7 @@
         xmlns:local="clr-namespace:File_Directory_Organizing_Helper"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-
+    <Grid x:Name="main_grid" Background="{Binding BackgroundColor}">
         <TextBox x:Name="directorySelected" HorizontalAlignment="Left" Margin="72,68,0,0" TextWrapping="Wrap" Text="Folder Selected:" VerticalAlignment="Top" Width="98" AllowDrop="True" Cursor="None" IsReadOnly="True" Height="30" BorderThickness="0,0,0,0"/>
         <Button x:Name="selectFolder" Content="Select Folder" HorizontalAlignment="Left" Margin="619,63,0,0" VerticalAlignment="Top" Click="Button_Click" Height="29" Width="91"/>
         <TextBox x:Name="directory" HorizontalAlignment="Left" Margin="160,63,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="459" Height="29"/>

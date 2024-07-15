@@ -45,5 +45,20 @@ namespace File_Directory_Organizing_Helper
             fileTypesList.Clear();
             ListOfExtensions.Text = "";
         }
+
+        private void quitButton_Click(object sender, RoutedEventArgs e)
+        {
+            System.Windows.Application.Current.Shutdown();
+        }
+
+        private void saveButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (darkModeCheckbox.IsChecked == true)
+            {
+                main_grid: Background = System.Windows.Media.Brushes.Gray;
+                options_grid:Background = System.Windows.Media.Brushes.Gray;
+            }
+            // Application.Current.Windows.OfType<OptionsWindow>().SingleOrDefault() ? .Hide();
+        }
     }
 }
