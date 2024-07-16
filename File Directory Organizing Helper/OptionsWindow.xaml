@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="OptionsWindow" Height="400" Width="500">
     <Grid x:Name="options_Grid" Background="{Binding BackgroundColor}">
-        <CheckBox x:Name="darkModeCheckBox" Content="Enable Dark Mode?" HorizontalAlignment="Left" Margin="238,56,0,0" VerticalAlignment="Top"></CheckBox>
+        <CheckBox x:Name="darkModeCheckbox" Content="Enable Dark Mode?" HorizontalAlignment="Left" Margin="238,56,0,0" VerticalAlignment="Top"></CheckBox>
         <TextBox x:Name="ListOfExtensions" HorizontalAlignment="Left" Margin="29,76,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Height="186" IsReadOnly="False"/>
         <TextBox x:Name="InputFileExtension" HorizontalAlignment="Left" Margin="241,149,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <TextBlock HorizontalAlignment="Left" Margin="238,94,0,0" TextWrapping="Wrap" Text="Enter Custom File Extension Below (Do Not Include The .):" VerticalAlignment="Top"/>

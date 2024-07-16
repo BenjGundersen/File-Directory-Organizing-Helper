@@ -55,8 +55,8 @@ namespace File_Directory_Organizing_Helper
         {
             if (darkModeCheckbox.IsChecked == true)
             {
-                main_grid: Background = System.Windows.Media.Brushes.Gray;
-                options_grid:Background = System.Windows.Media.Brushes.Gray;
+                main_grid:Background = System.Windows.Media.Brushes.Gray;
+                options_Grid:Background = System.Windows.Media.Brushes.Gray;
             }
             // Application.Current.Windows.OfType<OptionsWindow>().SingleOrDefault() ? .Hide();
         }

@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:File_Directory_Organizing_Helper"
         mc:Ignorable="d"
         Title="InfoWindow" Height="200" Width="300">
-    <Grid>
+    <Grid x:Name="info_grid">
         <TextBlock HorizontalAlignment="Left" Margin="49,0,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Center">
             <Hyperlink NavigateUri="http://www.google.com" RequestNavigate="Hyperlink_RequestNavigate">Click</Hyperlink>
         </TextBlock>
