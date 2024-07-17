@@ -35,5 +35,10 @@ namespace File_Directory_Organizing_Helper
             Process.Start(new ProcessStartInfo(e.Uri.AbsoluteUri));
             e.Handled = true;
         }
+
+        public void UpdateBackground(Brush brush)
+        {
+            info_grid.Background = brush;
+        }
     }
 }

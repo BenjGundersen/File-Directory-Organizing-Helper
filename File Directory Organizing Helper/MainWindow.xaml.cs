@@ -22,12 +22,20 @@ namespace File_Directory_Organizing_Helper
     /// </summary>
     public partial class MainWindow : Window
     {
+        private InfoWindow infoWindow;
+        private OptionsWindow optionsWindow;
         public MainWindow()
         {
-            
+            InitializeComponent();
+            infoWindow = new InfoWindow();
+            optionsWindow = new OptionsWindow(infoWindow);
+
+
         }
 
         List<string> fileTypesList = new List<string>();
+        //InfoWindow infoWindow = new InfoWindow();
+        //OptionsWindow optionsWindow = new OptionsWindow();
 
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -228,15 +236,11 @@ namespace File_Directory_Organizing_Helper
 
         private void infoButton_Click(object sender, RoutedEventArgs e)
         {
-            InfoWindow infoWindow = new InfoWindow();
-
             infoWindow.Show();
         }
 
         private void optionsButton_Click(object sender, RoutedEventArgs e)
         {
-            OptionsWindow optionsWindow = new OptionsWindow();
-
             optionsWindow.Show();
         }
     }

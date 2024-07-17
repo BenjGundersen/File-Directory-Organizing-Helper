@@ -19,9 +19,12 @@ namespace File_Directory_Organizing_Helper
     /// </summary>
     public partial class OptionsWindow : Window
     {
-        public OptionsWindow()
+        private InfoWindow infoWindow;
+        public OptionsWindow(InfoWindow infoWindow)
         {
             InitializeComponent();
+            this.infoWindow = infoWindow;
+
         }
 
         private static List<string> fileTypesList = new List<string>();
@@ -50,14 +53,29 @@ namespace File_Directory_Organizing_Helper
         {
             System.Windows.Application.Current.Shutdown();
         }
-
-        private void saveButton_Click(object sender, RoutedEventArgs e)
+        private void applyButton_Click(object sender, RoutedEventArgs e)
         {
             if (darkModeCheckbox.IsChecked == true)
             {
-                main_grid:Background = System.Windows.Media.Brushes.Gray;
+                
                 options_Grid:Background = System.Windows.Media.Brushes.Gray;
             }
+            
+            var mainWindow = Application.Current.MainWindow as MainWindow;
+            if (mainWindow != null)
+            {
+                mainWindow.main_grid.Background = System.Windows.Media.Brushes.Gray;
+            }
+
+            //var infoWindow = Application.Current.MainWindow as InfoWindow;
+            if (infoWindow != null)
+            {
+                //infoWindow = new InfoWindow();
+                infoWindow.UpdateBackground(System.Windows.Media.Brushes.DimGray);
+            }
+            
+            //infoWindow.Show();
+
             // Application.Current.Windows.OfType<OptionsWindow>().SingleOrDefault() ? .Hide();
         }
     }

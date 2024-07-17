@@ -9,13 +9,13 @@
     <Grid x:Name="options_Grid" Background="{Binding BackgroundColor}">
         <CheckBox x:Name="darkModeCheckbox" Content="Enable Dark Mode?" HorizontalAlignment="Left" Margin="238,56,0,0" VerticalAlignment="Top"></CheckBox>
         <TextBox x:Name="ListOfExtensions" HorizontalAlignment="Left" Margin="29,76,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Height="186" IsReadOnly="False"/>
-        <TextBox x:Name="InputFileExtension" HorizontalAlignment="Left" Margin="241,149,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBlock HorizontalAlignment="Left" Margin="238,94,0,0" TextWrapping="Wrap" Text="Enter Custom File Extension Below (Do Not Include The .):" VerticalAlignment="Top"/>
-        <Button x:Name="AddExtensionToListButton" Content="Add To List" HorizontalAlignment="Left" Margin="299,172,0,0" VerticalAlignment="Top" Click="addExtensionToListButton_Click"/>
+        <TextBox x:Name="InputFileExtension" HorizontalAlignment="Left" Margin="241,175,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBlock HorizontalAlignment="Left" Margin="238,125,0,0" TextWrapping="Wrap" Text="Enter Custom File Extension Below (Do Not Include The .):" VerticalAlignment="Top"/>
+        <Button x:Name="AddExtensionToListButton" Content="Add To List" HorizontalAlignment="Left" Margin="299,200,0,0" VerticalAlignment="Top" Click="addExtensionToListButton_Click"/>
         <TextBlock HorizontalAlignment="Left" Margin="29,55,0,0" TextWrapping="Wrap" Text="List of Custom File Extensions:" VerticalAlignment="Top"/>
         <Button x:Name="UpdateListButton" Content="Clear List" HorizontalAlignment="Left" Margin="30, 275, 0, 0" VerticalAlignment="Top" Click="ClearListButton_OnClick"/>
         <Button x:Name="quitButton" Content="Quit Program" HorizontalAlignment="Left" Margin="286,275,0,0" VerticalAlignment="Top" Click="quitButton_Click"/>
-        <Button x:Name="saveButton" Content="Save And Close Options" HorizontalAlignment="Left" Margin="230,218,0,0" VerticalAlignment="Top" Click="saveButton_Click"/>
+        <Button x:Name="applyButton" Content="Apply Dark Mode" HorizontalAlignment="Left" Margin="235,80,0,0" VerticalAlignment="Top" Click="applyButton_Click"/>
 
     </Grid>
 </Window>
