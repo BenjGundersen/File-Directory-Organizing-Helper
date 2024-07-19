@@ -57,26 +57,20 @@ namespace File_Directory_Organizing_Helper
         {
             if (darkModeCheckbox.IsChecked == true)
             {
-                
-                options_Grid:Background = System.Windows.Media.Brushes.Gray;
+                options_Grid:Background = System.Windows.Media.Brushes.DimGray;
+                var mainWindow = Application.Current.MainWindow as MainWindow;
+                if (mainWindow != null)
+                {
+                    mainWindow.main_grid.Background = System.Windows.Media.Brushes.DimGray;
+                }
+
+                if (infoWindow != null)
+                {
+                    infoWindow.UpdateBackground(System.Windows.Media.Brushes.DimGray);
+                }
             }
             
-            var mainWindow = Application.Current.MainWindow as MainWindow;
-            if (mainWindow != null)
-            {
-                mainWindow.main_grid.Background = System.Windows.Media.Brushes.Gray;
-            }
 
-            //var infoWindow = Application.Current.MainWindow as InfoWindow;
-            if (infoWindow != null)
-            {
-                //infoWindow = new InfoWindow();
-                infoWindow.UpdateBackground(System.Windows.Media.Brushes.DimGray);
-            }
-            
-            //infoWindow.Show();
-
-            // Application.Current.Windows.OfType<OptionsWindow>().SingleOrDefault() ? .Hide();
         }
     }
 }

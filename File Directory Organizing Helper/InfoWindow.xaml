@@ -7,11 +7,7 @@
         mc:Ignorable="d"
         Title="InfoWindow" Height="200" Width="300">
     <Grid x:Name="info_grid">
-        <TextBlock HorizontalAlignment="Left" Margin="49,0,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Center">
-            <Hyperlink NavigateUri="http://www.google.com" RequestNavigate="Hyperlink_RequestNavigate">Click</Hyperlink>
-        </TextBlock>
-        
-
+        <TextBox HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Made by: Ben Gundersen" VerticalAlignment="Top" Width="120"/>
 
     </Grid>
 </Window>
